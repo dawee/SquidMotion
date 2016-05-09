@@ -4,7 +4,8 @@
   "description": "The SVG animation editor",
   "main": "app.js",
   "scripts": {
-    "test": "$(npm bin)/mocha -R nyan"
+    "start": "nw gui",
+    "test": "mocha -R nyan"
   },
   "repository": {
     "type": "git",
