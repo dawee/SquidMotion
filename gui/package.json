@@ -10,9 +10,5 @@
     "width": 660,
     "height": 500,
     "position": "center"
-  },
-  "dependencies": {
-    "nw": "0.15.0-rc1",
-    "squidmotion": "file:.."
   }
 }

@@ -4,6 +4,7 @@
   "description": "The SVG animation editor",
   "main": "app.js",
   "scripts": {
+    "prestart": "npm install --prefix gui .",
     "start": "npm start --prefix gui",
     "test": "mocha -R nyan"
   },
@@ -25,6 +26,7 @@
   "homepage": "https://github.com/dawicorti/SquidMotion#readme",
   "devDependencies": {
     "chai": "3.5.0",
+    "nw": "0.15.0-rc1",
     "mocha": "2.4.5"
   }
 }
