@@ -21,5 +21,8 @@
   "bugs": {
     "url": "https://github.com/dawicorti/SquidMotion/issues"
   },
-  "homepage": "https://github.com/dawicorti/SquidMotion#readme"
+  "homepage": "https://github.com/dawicorti/SquidMotion#readme",
+  "devDependencies": {
+    "nw": "0.15.0-rc1"
+  }
 }
