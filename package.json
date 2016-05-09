@@ -1,0 +1,25 @@
+{
+  "name": "squidmotion",
+  "version": "0.0.1-alpha",
+  "description": "The SVG animation editor",
+  "main": "app.js",
+  "scripts": {
+    "test": "$(npm bin)/mocha -R nyan"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/dawicorti/SquidMotion.git"
+  },
+  "keywords": [
+    "animation",
+    "svg",
+    "motion",
+    "squid"
+  ],
+  "author": "David Corticchiato",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/dawicorti/SquidMotion/issues"
+  },
+  "homepage": "https://github.com/dawicorti/SquidMotion#readme"
+}
