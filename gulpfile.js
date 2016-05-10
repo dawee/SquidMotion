@@ -1,11 +1,17 @@
+var path = require('path');
 var gulp = require('gulp');
 var browserify = require('gulp-browserify');
-var nwjsify = require('nwjs-browserify');
+var babelify = require('babelify');
+var rename = require('gulp-rename');
 
 
-gulp.task('dist', function() {
-  gulp.src('lib/boot/app.js')
+gulp.task('default', function() {
+  var staticDir = path.join(__dirname, 'gui', 'static');
+
+  gulp.src('lib/boot/app.jsx')
     .pipe(browserify({
+      transform: [babelify.configure({presets: ['es2015', 'react']})],
     }))
-    .pipe(gulp.dest('./gui/static'))
+    .pipe(rename('squidmotion-app.js'))
+    .pipe(gulp.dest(staticDir));
 });
