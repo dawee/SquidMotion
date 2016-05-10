@@ -8,7 +8,7 @@ var rename = require('gulp-rename');
 gulp.task('default', function() {
   var staticDir = path.join(__dirname, 'gui', 'static');
 
-  gulp.src('lib/boot/app.jsx')
+  gulp.src('lib/boot/app.js')
     .pipe(browserify({
       transform: [babelify.configure({presets: ['es2015', 'react']})],
     }))
