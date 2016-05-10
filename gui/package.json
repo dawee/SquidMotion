@@ -1,10 +1,6 @@
 {
   "name": "SquidMotion",
   "main": "index.html",
-  "scripts": {
-    "prestart": "npm install",
-    "start": "nw ."
-  },
   "window": {
     "toolbar": false,
     "width": 660,
