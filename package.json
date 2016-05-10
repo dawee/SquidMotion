@@ -2,7 +2,7 @@
   "name": "squidmotion",
   "version": "0.0.1-alpha",
   "description": "The SVG animation editor",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "dist": "gulp dist",
     "prestart": "npm run dist",
