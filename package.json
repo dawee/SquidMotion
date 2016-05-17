@@ -32,6 +32,7 @@
     "chai": "3.5.0",
     "gulp": "3.9.1",
     "gulp-browserify": "0.5.1",
+    "gulp-less": "3.1.0",
     "mocha": "2.4.5",
     "nw": "0.15.0-rc1"
   },

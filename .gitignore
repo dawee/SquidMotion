@@ -1,3 +1,4 @@
 build
 node_modules
-gui/static
+gui/static/*.css
+gui/static/*.js
