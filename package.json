@@ -4,7 +4,7 @@
   "description": "The SVG animation editor",
   "main": "index.js",
   "scripts": {
-    "compile": "babel --presets es2015,react -d build/ lib/",
+    "compile": "babel --presets es2015,react -d build/ --ignore node_modules,gui,gulpfile.js .",
     "gulp": "gulp",
     "prestart": "npm run gulp",
     "start": "nw gui",
