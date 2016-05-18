@@ -4,7 +4,11 @@
   "window": {
     "toolbar": true,
     "width": 450,
+    "min_width": 450,
+    "max_width": 450,
     "height": 250,
+    "min_height": 250,
+    "max_height": 250,
     "position": "center",
     "resizable": false
   }
