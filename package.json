@@ -35,7 +35,9 @@
     "gulp-browserify": "0.5.1",
     "gulp-less": "3.1.0",
     "mocha": "2.4.5",
-    "nw": "0.15.0-rc1"
+    "nw": "0.15.0-rc1",
+    "through2": "2.0.1",
+    "vinyl": "1.1.1"
   },
   "dependencies": {
     "babel-cli": "6.8.0",

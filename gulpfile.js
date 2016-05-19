@@ -6,47 +6,37 @@ var babelify = require('babelify');
 var express = require('express');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
+var through = require('through2');
 
 
+var rules = {
+ 'static/squidmotion-app.css': {
+    src: 'lib/style/main.less',
+    generator: function () {
+      return less({paths: ['./lib/style']});
+    }
+  },
+  'static/squidmotion-app.js': {
+    src: 'lib/boot/app.js',
+    generator: function () {
+      return browserify({
+        transform: [babelify.configure({presets: ['es2015', 'react']})],
+      });
+    }
+  }
+};
 
-var specs = [
- {
-   /*
-    * LESS Processor
-    */
-
-   src: './lib/style/main.less',
-   processors: [
-    less({
-      paths: ['./lib/style']
-    }),
-    rename('squidmotion-app.css')
-   ]
- },
- {
-   /*
-    * Browserify (with babel/react) processor
-    */
-
-   src: './lib/boot/app.js',
-   processors: [
-    browserify({
-      transform: [babelify.configure({presets: ['es2015', 'react']})],
-    }),
-    rename('squidmotion-app.js')
-   ]
- }
-];
+function createStream(dest) {
+  return gulp
+    .src(path.join(__dirname, rules[dest].src))
+    .pipe(rules[dest].generator());
+}
 
 gulp.task('default', function() {
-  specs.forEach(function (spec) {
-    var stream = gulp.src(spec.src);
-
-    spec.processors.forEach(function (processor) {
-      stream = stream.pipe(processor);
-    });
-
-    stream.pipe(gulp.dest('./gui/static'));
+  Object.keys(rules).forEach(function (dest) {
+    createStream(dest)
+      .pipe(rename(path.basename(dest)))
+      .pipe(gulp.dest('./gui/static'));
   });
 });
 
@@ -54,17 +44,37 @@ gulp.task('dev', function() {
   var app = express();
 
   app.get(/^(.*)$/, function (req, res) {
-    var part = req.params[0];
-    var stream = null;
+    var part = req.params[0].replace(/^\//, '');
 
-    if (part === '' || part === '/') {
-      stream = fs.createReadStream('./gui/index.html');
+    if (part in rules) {
+      createStream(part).pipe(through.obj(function(file, enc, cb) {
+        if (file.isBuffer()) {
+          res.write(file.contents);
+          res.end();
+        } else if (file.isStream) {
+          file.contents.pipe(res);
+        }
+
+        cb();
+      }));
+    } else if (part === '') {
+      fs.createReadStream('./gui/index.html').pipe(res);
+    } else if (fs.existsSync(path.join('./gui', part))) {
+      fs.createReadStream(path.join('./gui', part)).pipe(res);
     } else {
-      stream = fs.createReadStream(path.join('./gui', part));
+      res.status(404).send();
+      res.end();
     }
-
-    stream.pipe(res);
   });
 
   app.listen(8666);
+});
+
+gulp.task('foobar', function () {
+  gulp.src('lib/boot/app.js')
+    .pipe(through.obj(function(file, enc, cb) {
+      this.push(file);
+      cb();
+    }))
+    .pipe(gulp.dest('/tmp'));
 });

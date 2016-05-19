@@ -2,3 +2,5 @@ build
 node_modules
 gui/static/*.css
 gui/static/*.js
+npm-debug.log
+
