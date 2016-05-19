@@ -5,22 +5,37 @@ var babelify = require('babelify');
 var less = require('gulp-less');
 var rename = require('gulp-rename');
 
+var staticDir = path.join(__dirname, 'gui', 'static');
+var specs = [
+ {
+   src: './lib/style/main.less',
+   processors: [
+    less({
+      paths: [ './lib/style' ]
+    }),
+    rename('squidmotion-app.css')
+   ]
+ },
+ {
+   src: 'lib/boot/app.js',
+   processors: [
+    browserify({
+      transform: [babelify.configure({presets: ['es2015', 'react']})],
+    }),
+    rename('squidmotion-app.js')
+   ]
+ }
+];
+
 
 gulp.task('default', function() {
-  var staticDir = path.join(__dirname, 'gui', 'static');
+  specs.forEach(function (spec) {
+    var stream = gulp.src(spec.src);
 
-  gulp.src('./lib/style/main.less')
-    .pipe(less({
-      paths: [ './lib/style' ]
-    }))
-    .pipe(rename('squidmotion-app.css'))
-    .pipe(gulp.dest(staticDir));
+    spec.processors.forEach(function (processor) {
+      stream = stream.pipe(processor);
+    });
 
-  gulp.src('lib/boot/app.js')
-    .pipe(browserify({
-      transform: [babelify.configure({presets: ['es2015', 'react']})],
-    }))
-    .pipe(rename('squidmotion-app.js'))
-    .pipe(gulp.dest(staticDir));
+    stream.pipe(gulp.dest(staticDir));
+  });
 });
-
