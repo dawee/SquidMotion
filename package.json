@@ -4,12 +4,13 @@
   "description": "The SVG animation editor",
   "main": "index.js",
   "scripts": {
-    "compile": "babel --presets es2015,react -d build/ --ignore node_modules,gui,gulpfile.js .",
+    "compile": "babel -q --presets es2015,react -d .build/ --ignore node_modules,gui,gulpfile.js .",
     "gulp": "gulp",
     "prestart": "npm run gulp",
     "start": "nw gui",
-    "pretest": "npm run compile",
-    "test": "mocha"
+    "preruntest": "npm run -s compile",
+    "runtest": "mocha ./.build/test",
+    "test": "npm run -s runtest"
   },
   "repository": {
     "type": "git",
