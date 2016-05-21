@@ -5,13 +5,13 @@ import * as constant from '../lib/constant';
 
 describe('storing', function () {
 
-  it('should store when action is triggered', function () {
-    action.createProject('foobar.svg');
+  it('should store when svgImport is triggered', function () {
+    action.importSVG('foobar.svg');
     assert.equal(1, projectStore.projects.length);
   });
 
   it('should send an event when a project is created', function (done) {
-    projectStore.on(constant.PROJECT_CREATED, done);
+    projectStore.on('change', done);
     projectStore.onCreate({svgFileName: 'foobar.svg'});
   });
 
