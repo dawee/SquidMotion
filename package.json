@@ -9,7 +9,7 @@
     "prestart": "npm run gulp",
     "start": "nw gui",
     "preruntest": "npm run -s compile",
-    "runtest": "mocha ./.build/test",
+    "runtest": "mocha -R nyan ./.build/test",
     "test": "npm run -s runtest"
   },
   "repository": {
