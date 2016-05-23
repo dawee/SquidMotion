@@ -10,7 +10,7 @@ describe('storing', function () {
       done();
     });
 
-    importSVG('foobar.svg');
+    importSVG('<svg></svg>');
   });
 
 });
