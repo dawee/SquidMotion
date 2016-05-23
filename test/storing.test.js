@@ -1,6 +1,6 @@
 import assert from 'assert';
 import projectStore from '../lib/store/project';
-import * as action from '../lib/action';
+import {importSVG} from '../lib/action/svg';
 
 describe('storing', function () {
 
@@ -9,7 +9,7 @@ describe('storing', function () {
       assert.equal(1, projectStore.projects.length);
     });
 
-    action.importSVG('foobar.svg');
+    importSVG('foobar.svg');
   });
 
 });
