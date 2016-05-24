@@ -54,6 +54,7 @@
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-tap-event-plugin": "1.0.0",
-    "sax": "1.2.1"
+    "sax": "1.2.1",
+    "svg-transform-parser": "0.0.1"
   }
 }
