@@ -1,7 +1,16 @@
 import chai from 'chai';
-import {_parse, _parseStyleAttribute} from '../lib/action/svg';
+import * as svg from '../lib/action/svg';
 
 describe('svg', function () {
+
+  it('should compute circle bounds', function () {
+    chai.assert.deepEqual({
+      left: 100,
+      top: 200,
+      width: 300,
+      height: 300 
+    }, svg._computeCircleBounds({attributes: {r: 150, rx: 250, ry: 350}}))
+  });
 
   it('should parse a style attribute', function () {
     chai.assert.deepEqual({
@@ -9,7 +18,7 @@ describe('svg', function () {
       'fill-opacity': '1',
       'fill-rule': 'nonzero',
       'stroke': 'none'
-    }, _parseStyleAttribute('fill:#8ebd2c;fill-opacity:1;fill-rule:nonzero;stroke:none'))
+    }, svg._parseStyleAttribute('fill:#8ebd2c;fill-opacity:1;fill-rule:nonzero;stroke:none'))
   });
 
   it('should import a simple root doc', function () {
@@ -20,7 +29,7 @@ describe('svg', function () {
         height: "100"
       },
       children: []
-    }, _parse('<svg width="200" height="100" />'))
+    }, svg._parse('<svg width="200" height="100" />'))
   });
 
   it('should import a more complex doc', function () {
@@ -52,7 +61,7 @@ describe('svg', function () {
           children: []
         }
       ]
-    }, _parse('<svg><g id="group1"><path d="m10,10" /></g><g id="group2"></g></svg>'))
+    }, svg._parse('<svg><g id="group1"><path d="m10,10" /></g><g id="group2"></g></svg>'))
   });
 
 });
