@@ -13,6 +13,15 @@ describe('svg', function () {
     }, svg._computeCircleBounds({attributes: {r: 150, cx: 250, cy: 350}}))
   });
 
+  it('should compute path bounds', function () {
+    chai.assert.deepEqual({
+      left: 5,
+      top: 10,
+      width: 5,
+      height: 0 
+    }, svg._computePathBounds({attributes: {d:'m10,10 h 5'}}))
+  });
+
   it('should parse a style attribute', function () {
     chai.assert.deepEqual({
       'fill': '#8ebd2c',
