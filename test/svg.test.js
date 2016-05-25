@@ -15,7 +15,7 @@ describe('svg', function () {
 
   it('should compute path bounds', function () {
     chai.assert.deepEqual({
-      left: 5,
+      left: 10,
       top: 10,
       width: 5,
       height: 0 

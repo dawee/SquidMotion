@@ -6,6 +6,7 @@ var babelify = require('babelify');
 var express = require('express');
 var rename = require('gulp-rename');
 var through = require('through2');
+var replace = require('browserify-replace');
 
 
 var rules = {
@@ -13,7 +14,13 @@ var rules = {
     src: 'lib/boot/app.js',
     generator: function () {
       return browserify({
-        transform: [babelify.configure({presets: ['es2015', 'react']})],
+        transform: [
+          babelify.configure({presets: ['es2015', 'react']}),
+          function (file, opts) {
+            opts.replace = {from:/φ/g, to:'phi'};
+            return replace(file, opts);
+          }
+        ],
       });
     }
   }
@@ -61,13 +68,4 @@ gulp.task('dev', function() {
   });
 
   app.listen(8666);
-});
-
-gulp.task('foobar', function () {
-  gulp.src('lib/boot/app.js')
-    .pipe(through.obj(function(file, enc, cb) {
-      this.push(file);
-      cb();
-    }))
-    .pipe(gulp.dest('/tmp'));
 });
