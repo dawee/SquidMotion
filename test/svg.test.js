@@ -1,4 +1,5 @@
 import chai from 'chai';
+import pick from '101/pick';
 import * as svg from '../lib/action/svg';
 
 describe('svg', function () {
@@ -9,7 +10,7 @@ describe('svg', function () {
       top: 200,
       width: 300,
       height: 300 
-    }, svg._computeCircleBounds({attributes: {r: 150, rx: 250, ry: 350}}))
+    }, svg._computeCircleBounds({attributes: {r: 150, cx: 250, cy: 350}}))
   });
 
   it('should parse a style attribute', function () {
@@ -22,46 +23,27 @@ describe('svg', function () {
   });
 
   it('should import a simple root doc', function () {
+    var parsed = svg._parse('<svg width="200" height="100" />');
+    var svgRootNode = parsed.mapping[parsed.root.id];
+
     chai.assert.deepEqual({
       name: 'svg',
       attributes: {
         width: "200",
         height: "100"
-      },
-      children: []
-    }, svg._parse('<svg width="200" height="100" />'))
+      }
+    }, pick(svgRootNode, ['name', 'attributes']));
   });
 
   it('should import a more complex doc', function () {
-    
+    var parsed = svg._parse('<svg><g id="group1"><path id="path1" d="m10,10" /></g><g id="group2"></g></svg>');
+
     chai.assert.deepEqual({
-      name: 'svg',
-      attributes: {},
-      children: [
-        {
-          name: 'g',
-          attributes: {
-            id: 'group1'
-          },
-          children: [
-            {
-              name: 'path',
-              attributes: {
-                d: 'm10,10'
-              },
-              children: []
-            }
-          ]
-        },
-        {
-          name: 'g',
-          attributes: {
-            id: 'group2'
-          },
-          children: []
-        }
-      ]
-    }, svg._parse('<svg><g id="group1"><path d="m10,10" /></g><g id="group2"></g></svg>'))
+      name: 'path',
+      attributes: {
+        d: 'm10,10'
+      }
+    }, pick(parsed.mapping.path1, ['name', 'attributes']))
   });
 
 });
