@@ -4,18 +4,11 @@ var gulp = require('gulp');
 var browserify = require('gulp-browserify');
 var babelify = require('babelify');
 var express = require('express');
-var less = require('gulp-less');
 var rename = require('gulp-rename');
 var through = require('through2');
 
 
 var rules = {
- 'static/squidmotion-app.css': {
-    src: 'lib/style/main.less',
-    generator: function () {
-      return less({paths: ['./lib/style']});
-    }
-  },
   'static/squidmotion-app.js': {
     src: 'lib/boot/app.js',
     generator: function () {

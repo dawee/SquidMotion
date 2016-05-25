@@ -1,6 +1,6 @@
 .build
 node_modules
-gui/static/*.css
-gui/static/*.js
+gui/static
+!gui/static/font
 npm-debug.log
 

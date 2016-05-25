@@ -10,6 +10,7 @@
     "min_height": 250,
     "max_height": 250,
     "position": "center",
-    "resizable": false
+    "resizable": false,
+    "show": false
   }
 }
