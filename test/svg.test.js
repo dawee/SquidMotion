@@ -4,24 +4,6 @@ import * as svg from '../lib/action/svg';
 
 describe('svg', function () {
 
-  it('should compute circle bounds', function () {
-    chai.assert.deepEqual({
-      left: 100,
-      top: 200,
-      width: 300,
-      height: 300 
-    }, svg._computeCircleBounds({attributes: {r: 150, cx: 250, cy: 350}}))
-  });
-
-  it('should compute path bounds', function () {
-    chai.assert.deepEqual({
-      left: 10,
-      top: 10,
-      width: 5,
-      height: 0 
-    }, svg._computePathBounds({attributes: {d:'m10,10 h 5'}}))
-  });
-
   it('should parse a style attribute', function () {
     chai.assert.deepEqual({
       'fill': '#8ebd2c',
