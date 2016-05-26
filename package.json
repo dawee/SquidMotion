@@ -4,6 +4,7 @@
   "description": "The SVG animation editor",
   "main": "index.js",
   "scripts": {
+    "prestart": "make browserify",
     "start": "nw gui",
     "test": "make test"
   },

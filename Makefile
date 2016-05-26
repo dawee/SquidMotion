@@ -3,7 +3,7 @@ bin = ./node_modules/.bin
 test: build
 	@${bin}/mocha -R nyan build/test
 
-browsersify: build
+browserify: build
 	@${bin}/browserify build/lib/boot/app.js -o gui/static/squidmotion-app.js
 
 build:
