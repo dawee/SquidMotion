@@ -4,13 +4,8 @@
   "description": "The SVG animation editor",
   "main": "index.js",
   "scripts": {
-    "compile": "babel -q --presets es2015,react -d .build/ --ignore node_modules,gui,gulpfile.js .",
-    "gulp": "gulp",
-    "prestart": "npm run gulp",
     "start": "nw gui",
-    "preruntest": "npm run -s compile",
-    "runtest": "mocha -R nyan ./.build/test",
-    "test": "npm run -s runtest"
+    "test": "make test"
   },
   "repository": {
     "type": "git",
@@ -29,12 +24,11 @@
   },
   "homepage": "https://github.com/dawicorti/SquidMotion#readme",
   "devDependencies": {
+    "babel-cli": "6.8.0",
     "babel-core": "6.8.0",
+    "browserify": "13.0.1",
     "chai": "3.5.0",
     "express": "4.13.4",
-    "gulp": "3.9.1",
-    "gulp-browserify": "0.5.1",
-    "gulp-less": "3.1.0",
     "mocha": "2.4.5",
     "nw": "0.15.0-rc1",
     "through2": "2.0.1",
@@ -50,8 +44,6 @@
     "browserify-replace": "0.9.0",
     "fbemitter": "2.0.2",
     "flux": "2.1.1",
-    "gulp-rename": "1.2.2",
-    "gulp-replace": "0.5.4",
     "hat": "0.0.3",
     "material-ui": "0.15.0",
     "react": "15.0.2",
