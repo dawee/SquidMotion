@@ -1,0 +1,44 @@
+{
+  "extends": "airbnb",
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "indent": "off",
+    "max-len": "off",
+    "semi": "off",
+    "no-unused-vars": "off",
+    "object-curly-spacing": "off",
+    "quote-props": "off",
+    "no-trailing-spaces": "off",
+    "object-curly-spacing": "off",
+    "no-unused-vars": "off",
+    "prefer-arrow-callback": "off",
+    "no-var": "off",
+    "no-param-reassign": "off",
+    "no-multiple-empty-lines": "off",
+    "no-throw-literal": "off",
+    "object-shorthand": "off",
+    "consistent-return": "off",
+    "comma-dangle": "off",
+    "key-spacing": "off",
+    "no-undef": "off",
+    "eol-last": "off",
+    "func-names": "off",
+    "no-extra-semi": "off",
+    "no-underscore-dangle": "off",
+    "padded-blocks": "off",
+    "prefer-template": "off",
+    "space-before-function-paren": "off",
+    "vars-on-top": "off",
+    "react/jsx-no-bind": "off",
+    "react/jsx-closing-bracket-location": "off",
+    "react/sort-comp": "off",
+    "react/jsx-boolean-value": "off",
+    "react/prefer-stateless-function": "off",
+    "react/prop-types": "off",
+    "react/jsx-indent": "off"
+  }
+}
+
+ 

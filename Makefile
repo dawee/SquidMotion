@@ -1,4 +1,5 @@
 bin = ./node_modules/.bin
+sources = $(shell find ./lib -name "*.js")
 
 test: build
 	@${bin}/mocha -R nyan build/test
@@ -15,5 +16,7 @@ build:
 		--ignore node_modules,gui,build . \
 		-q -d build
 
+lint:
+	@${bin}/eslint ${sources}
 
 .PHONY: test build
