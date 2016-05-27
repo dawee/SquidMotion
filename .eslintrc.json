@@ -25,7 +25,6 @@
     "no-undef": "off",
     "eol-last": "off",
     "func-names": "off",
-    "no-extra-semi": "off",
     "no-underscore-dangle": "off",
     "padded-blocks": "off",
     "prefer-template": "off",
@@ -40,5 +39,3 @@
     "react/jsx-indent": "off"
   }
 }
-
- 
