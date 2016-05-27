@@ -23,7 +23,6 @@
     "comma-dangle": "off",
     "key-spacing": "off",
     "no-undef": "off",
-    "eol-last": "off",
     "func-names": "off",
     "no-underscore-dangle": "off",
     "padded-blocks": "off",
