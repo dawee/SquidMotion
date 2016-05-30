@@ -19,7 +19,6 @@
     "consistent-return": "off",
     "comma-dangle": "off",
     "key-spacing": "off",
-    "no-undef": "off",
     "func-names": "off",
     "prefer-const": "off",
     "no-underscore-dangle": "off",
@@ -34,5 +33,8 @@
     "react/prefer-stateless-function": "off",
     "react/prop-types": "off",
     "react/jsx-indent": "off"
+  },
+  "globals": {
+    "_require": true
   }
 }
