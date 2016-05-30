@@ -5,7 +5,6 @@
   ],
   "rules": {
     "max-len": "off",
-    "semi": "off",
     "object-curly-spacing": "off",
     "quote-props": "off",
     "no-trailing-spaces": "off",
