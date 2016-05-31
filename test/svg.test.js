@@ -1,9 +1,27 @@
 import chai from 'chai';
 import pick from '101/pick';
 import * as parser from '../lib/svg/parser';
-import * as bounds from '../lib/svg/bounds';
+import * as bound from '../lib/svg/bound';
+import * as matrix from '../lib/svg/matrix';
 
 describe('svg', function () {
+
+  describe('matrix', function () {
+    it('should keep matrix intact', function () {
+      chai.assert.deepEqual(
+        [0, 0.5870736, -0.71490982, 0, 1263.1602, 149.78854],
+        matrix.fromTransformString('matrix(0,0.5870736,-0.71490982,0,1263.1602,149.78854)').toArray()
+      );
+    });
+
+    it('should translate base matrix', function () {
+      chai.assert.deepEqual(
+        [1, 0, 0, 1, 100, 200],
+        matrix.fromTransformString('translate(100, 200)').toArray()
+      );
+    });
+
+  });
 
   describe('parser', function () {
 
@@ -40,47 +58,33 @@ describe('svg', function () {
       }, pick(parsed.mapping.path1, ['name', 'attributes']))
     });
 
-    it('should keep matrix intact', function () {
-      chai.assert.deepEqual(
-        [0, 0.5870736, -0.71490982, 0, 1263.1602, 149.78854],
-        parser.matrixFromTransform('matrix(0,0.5870736,-0.71490982,0,1263.1602,149.78854)').toArray()
-      );
-    });
-
-    it('should translate base matrix', function () {
-      chai.assert.deepEqual(
-        [1, 0, 0, 1, 100, 200],
-        parser.matrixFromTransform('translate(100, 200)').toArray()
-      );
-    });
-
   });
 
-  describe('bounds', function () {
-    it('should compute circle bounds', function () {
+  describe('bound', function () {
+    it('should compute circle bound', function () {
       chai.assert.deepEqual({
         left: 100,
         top: 200,
         width: 300,
         height: 300 
-      }, bounds.computeCircleBounds({attributes: {r: 150, cx: 250, cy: 350}}))
+      }, bound.computeCircleBounds({attributes: {r: 150, cx: 250, cy: 350}}))
     });
 
-    it('should compute path bounds', function () {
+    it('should compute path bound', function () {
       chai.assert.deepEqual({
         left: 10,
         top: 10,
         width: 5,
         height: 0 
-      }, bounds.computePathBounds({attributes: {d:'m10,10 h 5'}}))
+      }, bound.computePathBounds({attributes: {d:'m10,10 h 5'}}))
     });
 
-    it('should convert bounds without breaking it', function () {
+    it('should convert bound without breaking it', function () {
       var value = {top: 0, left: 0, width: 100, height: 200};
 
       chai.assert.deepEqual(
         value,
-        bounds.pointsToBounds(bounds.boundsToPoints(value))
+        bound.pointsToBounds(bound.boundsToPoints(value))
       );
     });
   });
