@@ -17,7 +17,6 @@
     "consistent-return": "off",
     "comma-dangle": "off",
     "key-spacing": "off",
-    "func-names": "off",
     "prefer-const": "off",
     "no-underscore-dangle": "off",
     "padded-blocks": "off",
