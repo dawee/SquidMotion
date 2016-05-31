@@ -19,7 +19,6 @@
     "prefer-const": "off",
     "padded-blocks": "off",
     "prefer-template": "off",
-    "space-before-function-paren": "off",
     "vars-on-top": "off",
     "react/jsx-no-bind": "off",
     "react/jsx-closing-bracket-location": "off",
