@@ -11,7 +11,6 @@
     "object-curly-spacing": "off",
     "prefer-arrow-callback": "off",
     "no-param-reassign": "off",
-    "no-multiple-empty-lines": "off",
     "no-throw-literal": "off",
     "object-shorthand": "off",
     "consistent-return": "off",
