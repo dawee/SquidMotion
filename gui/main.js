@@ -11,7 +11,6 @@ function createWindow () {
     resizable: false
   });
 
-  mainWindow.webContents.openDevTools();
   mainWindow.loadURL(`file://${__dirname}/index.html`)
   mainWindow.on('closed', function () {
     mainWindow = null
