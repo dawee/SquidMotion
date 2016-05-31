@@ -17,7 +17,6 @@
     "comma-dangle": "off",
     "key-spacing": "off",
     "prefer-const": "off",
-    "no-underscore-dangle": "off",
     "padded-blocks": "off",
     "prefer-template": "off",
     "space-before-function-paren": "off",

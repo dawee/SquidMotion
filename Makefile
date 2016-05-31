@@ -1,7 +1,10 @@
 bin = ./node_modules/.bin
 sources = $(shell find ./lib -name "*.js")
 
-test: build
+clean:
+	@rm -rf build
+
+test: clean build
 	@${bin}/mocha -R nyan build/test
 
 browserify:
