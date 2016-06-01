@@ -4,7 +4,6 @@
     "react"
   ],
   "rules": {
-    "max-len": "off",
     "object-curly-spacing": "off",
     "quote-props": "off",
     "object-curly-spacing": "off",
