@@ -19,7 +19,6 @@
     "padded-blocks": "off",
     "prefer-template": "off",
     "vars-on-top": "off",
-    "react/jsx-no-bind": "off",
     "react/jsx-closing-bracket-location": "off",
     "react/sort-comp": "off",
     "react/jsx-boolean-value": "off",
