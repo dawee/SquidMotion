@@ -24,7 +24,6 @@
     "react/sort-comp": "off",
     "react/jsx-boolean-value": "off",
     "react/prefer-stateless-function": "off",
-    "react/prop-types": "off",
     "react/jsx-indent": "off"
   },
   "globals": {
