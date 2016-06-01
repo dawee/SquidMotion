@@ -16,7 +16,6 @@
     "padded-blocks": "off",
     "prefer-template": "off",
     "vars-on-top": "off",
-    "react/sort-comp": "off",
     "react/jsx-boolean-value": "off",
     "react/prefer-stateless-function": "off",
     "react/jsx-indent": "off"
