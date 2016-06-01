@@ -7,7 +7,6 @@
     "object-curly-spacing": "off",
     "object-curly-spacing": "off",
     "prefer-arrow-callback": "off",
-    "no-param-reassign": "off",
     "no-throw-literal": "off",
     "object-shorthand": "off",
     "consistent-return": "off",
