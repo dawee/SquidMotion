@@ -5,7 +5,6 @@
   ],
   "rules": {
     "object-curly-spacing": "off",
-    "quote-props": "off",
     "object-curly-spacing": "off",
     "prefer-arrow-callback": "off",
     "no-param-reassign": "off",
