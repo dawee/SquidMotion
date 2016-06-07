@@ -54,10 +54,7 @@
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-tap-event-plugin": "1.0.0",
-    "sax": "1.2.1",
-    "svg-path-bounding-box": "1.0.4",
-    "svg-path-parser": "1.0.1",
-    "svg-transform-parser": "0.0.1",
+    "svg-flat-document": "0.0.2",
     "transformation-matrix-js": "2.6.5"
   }
 }
