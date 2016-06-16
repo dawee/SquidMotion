@@ -1,6 +1,6 @@
-import assert from 'assert';
-import projectStore from '../lib/store/project';
-import {importSVG} from '../lib/action/svg';
+const assert = require('assert');
+const projectStore = require('../lib/store/project');
+const importSVG = require('../lib/action/svg').importSVG;
 
 describe('storing', function () {
 

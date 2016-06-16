@@ -1,8 +1,8 @@
-import chai from 'chai';
-import pick from '101/pick';
-import * as parser from '../lib/svg/parser';
-import * as bound from '../lib/svg/bound';
-import * as matrix from '../lib/svg/matrix';
+const chai = require('chai');
+const pick = require('101/pick');
+const parser = require('../lib/svg/parser');
+const bound = require('../lib/svg/bound');
+const matrix = require('../lib/svg/matrix');
 
 describe('svg', function () {
 

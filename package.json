@@ -46,7 +46,7 @@
   },
   "dependencies": {
     "101": "1.5.0",
-    "dwflux": "0.0.2",
+    "dwflux": "0.0.5",
     "fbemitter": "2.0.2",
     "flux": "2.1.1",
     "hat": "0.0.3",

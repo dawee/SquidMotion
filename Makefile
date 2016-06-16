@@ -1,14 +1,15 @@
 bin = ./node_modules/.bin
 sources = $(shell find ./lib -name "*.js")
 
-test: build
-	@${bin}/mocha -R nyan build/test
 
 browserify:
 	@${bin}/browserify lib/boot/app.js \
-		-t [ babelify --presets [ es2015 react ] ] \
+		-t [ babelify --presets [ react ] ] \
 		| sed 's/_require/require/' \
 		> gui/static/squidmotion-app.js
+
+test: build
+	@${bin}/mocha -R nyan build/test
 
 build:
 	@${bin}/babel \
