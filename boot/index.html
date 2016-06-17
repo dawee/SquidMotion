@@ -8,7 +8,13 @@
   </head>
   <body style="overflow:hidden">
     <div id="content"></div>
-    <script src="static/squidmotion-app.js"></script>
+    <script>
+    (() => {
+      let app = require('../lib/component/app')
+
+      app.boot();
+    })();
+    </script>
   </body>
 </html>
 

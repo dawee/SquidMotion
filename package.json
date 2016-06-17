@@ -4,7 +4,7 @@
   "description": "The SVG animation editor",
   "main": "index.js",
   "scripts": {
-    "prestart": "make browserify",
+    "lint": "eslint lib",
     "start": "electron boot/main.js",
     "test": "make test"
   },

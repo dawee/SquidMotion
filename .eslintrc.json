@@ -12,9 +12,7 @@
     "prefer-const": "off",
     "padded-blocks": "off",
     "prefer-template": "off",
-    "vars-on-top": "off"
-  },
-  "globals": {
-    "_require": true
+    "vars-on-top": "off",
+    "import/no-unresolved": [2, { "ignore": ["electron"] }]
   }
 }
