@@ -1,6 +1,6 @@
 build
 node_modules
-gui/static
-!gui/static/font
+boot/static
+!boot/static/font
 npm-debug.log
 

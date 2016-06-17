@@ -3,7 +3,7 @@ sources = $(shell find ./lib -name "*.js")
 
 
 browserify:
-	@${bin}/browserify lib/component/app.js | sed 's/_require/require/' > gui/static/squidmotion-app.js
+	@${bin}/browserify lib/component/app.js | sed 's/_require/require/' > boot/static/squidmotion-app.js
 
 test:
 	@${bin}/mocha -R nyan test

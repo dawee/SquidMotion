@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "prestart": "make browserify",
-    "start": "electron gui/main.js",
+    "start": "electron boot/main.js",
     "test": "make test"
   },
   "repository": {
