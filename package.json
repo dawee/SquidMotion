@@ -44,11 +44,11 @@
     "flux": "2.1.1",
     "hat": "0.0.3",
     "material-ui": "0.15.0",
-    "motion-timeline": "0.0.3",
+    "motion-timeline": "0.0.4",
     "react": "15.0.2",
     "react-dom": "15.0.2",
     "react-tap-event-plugin": "1.0.0",
-    "svg-flat-document": "0.0.2",
+    "svg-flat-document": "0.0.3",
     "transformation-matrix-js": "2.6.5"
   }
 }
