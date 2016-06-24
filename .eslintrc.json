@@ -3,16 +3,8 @@
   "rules": {
     "no-nested-ternary": "off",
     "object-curly-spacing": "off",
-    "object-curly-spacing": "off",
-    "prefer-arrow-callback": "off",
-    "no-throw-literal": "off",
     "object-shorthand": "off",
-    "consistent-return": "off",
-    "comma-dangle": "off",
-    "key-spacing": "off",
     "prefer-const": "off",
-    "padded-blocks": "off",
-    "prefer-template": "off",
     "vars-on-top": "off",
     "import/no-unresolved": [2, { "ignore": ["electron"] }]
   }
