@@ -3,8 +3,6 @@
   "rules": {
     "no-nested-ternary": "off",
     "object-curly-spacing": "off",
-    "object-shorthand": "off",
-    "vars-on-top": "off",
     "import/no-unresolved": [2, { "ignore": ["electron"] }]
   }
 }
