@@ -25,31 +25,24 @@
   },
   "homepage": "https://github.com/dawicorti/SquidMotion#readme",
   "devDependencies": {
-    "browserify": "13.0.1",
-    "chai": "3.5.0",
     "electron-prebuilt": "1.2.0",
     "eslint": "2.10.2",
     "eslint-config-airbnb": "^9.0.1",
     "eslint-plugin-import": "1.8.1",
-    "express": "4.13.4",
+    "eslint-plugin-jsx-a11y": "1.5.3",
+    "eslint-plugin-react": "5.2.2",
     "mocha": "2.4.5",
-    "nwjs-browserify": "1.0.4",
-    "through2": "2.0.1",
-    "vinyl": "1.1.1"
+    "react-tap-event-plugin": "1.0.0"
   },
   "dependencies": {
     "101": "1.5.0",
     "dwflux": "0.0.5",
-    "fbemitter": "2.0.2",
-    "flux": "2.1.1",
     "hat": "0.0.3",
     "material-ui": "0.15.0",
     "motion-timeline": "0.0.5",
     "range-iterable": "1.0.1",
     "react": "15.0.2",
     "react-dom": "15.0.2",
-    "react-tap-event-plugin": "1.0.0",
-    "svg-flat-document": "0.0.3",
-    "transformation-matrix-js": "2.6.5"
+    "svg-flat-document": "0.0.3"
   }
 }
