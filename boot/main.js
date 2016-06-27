@@ -6,7 +6,7 @@ var mainWindow = null;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    show: true
+    show: false
   });
 
   mainWindow.loadURL(`file://${__dirname}/index.html`)
