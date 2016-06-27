@@ -38,11 +38,13 @@
     "101": "1.5.0",
     "dwflux": "0.0.5",
     "hat": "0.0.3",
+    "human-component": "0.0.4",
     "material-ui": "0.15.0",
     "motion-timeline": "0.0.5",
     "range-iterable": "1.0.1",
     "react": "15.0.2",
     "react-dom": "15.0.2",
+    "reactcss": "1.0.4",
     "svg-flat-document": "0.0.3"
   }
 }

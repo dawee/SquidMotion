@@ -1,6 +1,7 @@
 {
   "extends": "airbnb",
   "rules": {
-    "import/no-unresolved": [2, { "ignore": ["electron"] }]
+    "import/no-unresolved": [2, { "ignore": ["electron"] }],
+    "object-curly-spacing": "off"
   }
 }
