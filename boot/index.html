@@ -10,9 +10,14 @@
     <div id="content"></div>
     <script>
     (() => {
-      let app = require('../lib/component/app')
+      const React = require('react');
+      const ReactDOM = require('react-dom');
+      const App = require('../lib/component/app');
 
-      app.boot();
+      ReactDOM.render(
+        React.createElement(App),
+        document.getElementById('content')
+      );
     })();
     </script>
   </body>
