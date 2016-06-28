@@ -1,6 +1,7 @@
 const assert = require('assert');
 const mockery = require('mockery');
 const dispatcher = require('dwflux/dispatcher');
+const SVGFlatDocument = require('svg-flat-document');
 const sinon = require('sinon');
 
 
@@ -28,6 +29,10 @@ describe('actions', () => {
     DocumentStore = require('../lib/store/document');
     ImageStore = require('../lib/store/image');
     ProjectStore = require('../lib/store/project');
+    AnimationStore = require('../lib/store/animation');
+    ChannelStore = require('../lib/store/channel');
+    StepStore = require('../lib/store/step');
+
     stores = [DocumentStore, ImageStore, ProjectStore];
 
     class FileReaderMock {
@@ -111,6 +116,36 @@ describe('actions', () => {
 
       assert(callback.called);
       assert.equal(ImageStore.get('foobar').getState().me.attributes.width, 200);
+    });
+
+  });
+
+  describe('createChannelStep', () => {
+
+    let document;
+    let animation;
+    let channel;
+
+    beforeEach((done) => {
+      const data = '<svg><rect x="0" y="0" width="200" height="100" id="me"></rect></svg>';
+
+      document = DocumentStore.create('foobar', SVGFlatDocument.parse(data));
+      animation = AnimationStore.create('foobar', 'animation1');
+      channel = ChannelStore.create('animation1', 'channel1');
+      
+      done();
+    });
+
+
+    it('should create a new step', () => {
+      const store = StepStore.factory;
+      const callback = sinon.spy();
+
+      store.on('change', callback);
+      actions.createChannelStep('channel1', 100);
+
+      assert(callback.called);
+      assert.equal(StepStore.getSteps('channel1').length, 1);
     });
 
   });
