@@ -198,8 +198,46 @@ describe('actions', () => {
       assert.equal(StepStore.getSteps(channel.id)[0].time, 0);
     });
 
-
   });
+
+  describe('createAnimation', () => {
+
+    let document;
+
+    beforeEach((done) => {
+      const data = '<svg><rect x="0" y="0" width="200" height="100" id="me"></rect></svg>';
+
+      document = DocumentStore.create('foobar', SVGFlatDocument.parse(data));
+      
+      done();
+    });
+
+    it('should create a new animation', () => {
+      const store = AnimationStore.factory;
+      const callback = sinon.spy();
+
+      store.on('change', callback);
+      actions.createAnimation('foobar');
+
+      assert(callback.called);
+      assert.equal(AnimationStore.getAnimations('foobar').length, 1);
+    });
+
+    it('should create a first channel', () => {
+      const store = ChannelStore.factory;
+      const callback = sinon.spy();
+
+      store.on('change', callback);
+      actions.createAnimation('foobar');
+
+      assert(callback.called);
+
+      const animation = AnimationStore.getAnimations('foobar')[0];
+
+      assert.equal(ChannelStore.getChannels(animation.id).length, 1);
+    });
+
+  })
 
 });
 
