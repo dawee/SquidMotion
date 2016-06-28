@@ -33,7 +33,14 @@ describe('actions', () => {
     ChannelStore = require('../lib/store/channel');
     StepStore = require('../lib/store/step');
 
-    stores = [DocumentStore, ImageStore, ProjectStore];
+    stores = [
+      DocumentStore,
+      ImageStore,
+      ProjectStore,
+      AnimationStore,
+      ChannelStore,
+      StepStore,
+    ];
 
     class FileReaderMock {
 
@@ -52,6 +59,7 @@ describe('actions', () => {
   beforeEach((done) => {
     for (const store of stores) {
       store.map((instance) => instance.removeAllListeners());
+      store.mapping = {};
 
       if (!!store.factory) store.factory.removeAllListeners();
     }
@@ -147,6 +155,49 @@ describe('actions', () => {
       assert(callback.called);
       assert.equal(StepStore.getSteps('channel1').length, 1);
     });
+
+  });
+
+  describe('createChannel', () => {
+
+    let document;
+    let animation;
+
+    beforeEach((done) => {
+      const data = '<svg><rect x="0" y="0" width="200" height="100" id="me"></rect></svg>';
+
+      document = DocumentStore.create('foobar', SVGFlatDocument.parse(data));
+      animation = AnimationStore.create('foobar', 'animation1');
+      
+      done();
+    });
+
+    it('should create a new channel', () => {
+      const store = ChannelStore.factory;
+      const callback = sinon.spy();
+
+      store.on('change', callback);
+      actions.createAnimationChannel('animation1');
+
+      assert(callback.called);
+      assert.equal(ChannelStore.getChannels('animation1').length, 1);
+    });
+
+    it('should create a first step', () => {
+      const store = StepStore.factory;
+      const callback = sinon.spy();
+
+      store.on('change', callback);
+      actions.createAnimationChannel('animation1');
+
+      assert(callback.called);
+
+      const channel = ChannelStore.getChannels('animation1')[0];
+
+      assert.equal(StepStore.getSteps(channel.id).length, 1);
+      assert.equal(StepStore.getSteps(channel.id)[0].time, 0);
+    });
+
 
   });
 
