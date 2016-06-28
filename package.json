@@ -6,7 +6,7 @@
   "scripts": {
     "lint": "eslint lib",
     "start": "electron boot/main.js",
-    "test": "make test"
+    "test": "mocha"
   },
   "repository": {
     "type": "git",
@@ -32,7 +32,9 @@
     "eslint-plugin-jsx-a11y": "1.5.3",
     "eslint-plugin-react": "5.2.2",
     "mocha": "2.4.5",
-    "react-tap-event-plugin": "1.0.0"
+    "mockery": "1.7.0",
+    "react-tap-event-plugin": "1.0.0",
+    "sinon": "1.17.4"
   },
   "dependencies": {
     "101": "1.5.0",
