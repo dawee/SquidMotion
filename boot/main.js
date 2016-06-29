@@ -6,10 +6,10 @@ var mainWindow = null;
 
 function createWindow () {
   mainWindow = new BrowserWindow({
-    show: false
+    show: true
   });
 
-  mainWindow.loadURL(`file://${__dirname}/index.html`)
+  mainWindow.loadURL(`file://${__dirname}/index.html`);
   mainWindow.on('closed', function () {
     mainWindow = null
   });
