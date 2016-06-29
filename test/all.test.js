@@ -105,14 +105,14 @@ describe('actions', () => {
     });
 
     it('should create a new document', () => {
-      const store = DocumentStore.factory;
+      const store = DocumentStore.instance;
       const callback = sinon.spy();
 
       store.on('change', callback);
       actions.importSVG('foobar', '<svg width="200" height="100"></svg>');
 
       assert(callback.called);
-      assert.equal(DocumentStore.get('foobar').getState().width, 200);
+      assert.equal(DocumentStore.instance.get('foobar').width, 200);
     });
 
     it('should create a new image', () => {
