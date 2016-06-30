@@ -37,19 +37,18 @@
   },
   "dependencies": {
     "101": "1.5.0",
-    "dwflux": "0.0.6",
+    "dwflux": "0.0.8",
     "file-component": "0.1.0",
     "hat": "0.0.3",
     "human-component": "0.0.4",
     "material-ui": "0.15.1",
     "motion-timeline": "0.0.5",
     "range-iterable": "1.0.1",
-    "react-tap-event-plugin": "1.0.0",
-    "reactcss": "1.0.4",
-    "svg-flat-document": "0.0.3",
     "react": "^15.0.0",
+    "react-addons-test-utils": "^15.1.0",
     "react-dom": "^15.0.0",
     "react-tap-event-plugin": "^1.0.0",
-    "react-addons-test-utils": "^15.1.0"
+    "reactcss": "1.0.4",
+    "svg-flat-document": "0.0.3"
   }
 }
