@@ -1,6 +1,6 @@
 const assert = require('assert');
 const mockery = require('mockery');
-const dispatcher = require('dwflux/dispatcher');
+const Dispersive = require('dispersive');
 const SVGFlatDocument = require('svg-flat-document');
 const sinon = require('sinon');
 
@@ -52,48 +52,12 @@ describe('actions', () => {
 
   beforeEach((done) => {
     for (const store of stores) {
-      store.map((instance) => instance.removeAllListeners());
-      store.mapping = {};
+      store.removeAllListeners();
+      store.values = [];
     }
 
     done();
   });
-
-  describe('computeImage', () => {
-
-    it('should change image if fileId is correct');
-    it('should not change image if fileId is not correct');
-
-  });
-
-  describe('importSVG', () => {
-
-    it('should create a new project');
-    it('should create a new document');
-    it('should create a new image');
-
-  });
-
-  describe('createChannelStep', () => {
-
-
-    it('should create a new step');
-
-  });
-
-  describe('createChannel', () => {
-
-    it('should create a new channel');
-    it('should create a first step');
-
-  });
-
-  describe('createAnimation', () => {
-
-    it('should create a new animation');
-    it('should create a first channel');
-
-  })
 
 });
 
