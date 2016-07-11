@@ -3,6 +3,7 @@
   "rules": {
     "import/no-unresolved": [2, { "ignore": ["electron"] }],
     "object-curly-spacing": ["error", "never"],
-    "object-shorthand": "off"
+    "object-shorthand": "off",
+    "no-nested-ternary": "off"
   }
 }
