@@ -21,7 +21,7 @@ describe('actions', () => {
 
     mockery.registerMock('electron', {
       remote: {
-        getCurrentWindow: () => null 
+        getCurrentWindow: () => null
       }
     });
 

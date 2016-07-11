@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "101": "1.5.0",
-    "dispersive": "0.1.0",
+    "dispersive": "0.2.0",
     "file-component": "0.1.0",
     "hat": "0.0.3",
     "human-component": "0.0.4",
