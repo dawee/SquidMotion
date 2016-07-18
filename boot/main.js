@@ -6,6 +6,11 @@ var mainWindow = null;
 
 function createWindow () {
   mainWindow = new BrowserWindow({show: false});
+
+  if (! ('SQM_DEBUG' in process.env)) {
+    mainWindow.setMenu(null);
+  }
+
   mainWindow.loadURL(`file://${__dirname}/index.html`);
   mainWindow.on('closed', function () {
     mainWindow = null
