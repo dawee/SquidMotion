@@ -37,6 +37,7 @@
   },
   "dependencies": {
     "101": "1.5.0",
+    "camelcase": "3.0.0",
     "dispersive": "0.2.0",
     "file-component": "0.1.0",
     "hat": "0.0.3",
