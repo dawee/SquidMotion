@@ -51,6 +51,6 @@
     "react-dom": "^15.0.0",
     "react-tap-event-plugin": "^1.0.0",
     "reactcss": "1.0.4",
-    "svg-flat-document": "0.0.3"
+    "svg-flat-document": "0.0.4"
   }
 }
